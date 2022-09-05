@@ -1,5 +1,6 @@
 """
 Copyright(C)Radium-bit
+but not include other's code
 """
 import func
 import check
@@ -48,4 +49,3 @@ def choice():
         func.AboutProject()
     else:
         check.input_err()
-

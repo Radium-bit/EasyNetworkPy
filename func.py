@@ -1,5 +1,6 @@
 """
 Copyright(C)Radium-bit
+but not include other's code
 """
 from os import system, name
 
@@ -94,8 +95,11 @@ def backupHosts():
     return 2
 
 
-def trying() -> object:
+def trying():
     print("Test is OK!")
 
 def AboutProject():
     system("start https://github.com/Radium-bit/EasyNetwork")
+
+def AboutMe():
+    system("start https://github.com/Radium-bit")
