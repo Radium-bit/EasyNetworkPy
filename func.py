@@ -94,7 +94,7 @@ def backupHosts():
     hosts = "hosts"
     outpath = r'.\hostBAK'
     hostpath = r"C:\Windows\System32\drivers\etc"
-    shutil.copyfile(path.join(hostpath, hosts), path.join(outpath,hosts))
+    shutil.copyfile(path.join(hostpath, hosts), path.join(outpath, hosts))
     return 0
 
 
