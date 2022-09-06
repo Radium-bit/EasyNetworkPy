@@ -27,7 +27,7 @@ def AboutHosts():
     elif ch == 2:
         check.not_support()
     elif ch == 3:
-        check.not_support()
+        func.backupHosts()
 
 def choice():
     ch = int(input())

@@ -2,7 +2,8 @@
 Copyright(C)Radium-bit
 but not include other's code
 """
-from os import system, name
+import shutil
+from os import system, name, path, mkdir
 
 
 def clear():
@@ -83,16 +84,18 @@ def resetHosts():
 
 
 def backupHosts():
-    """
-	char* path, str[50], command[100];
-	path = str;
-	printf("请输入想要备份Hosts文件到的路径。");
-	printf("例如：C:\\Users\\Public\n");
-	scanf("%s", path);
-	sprintf(command, "copy C:\\Windows\\System32\\drivers\\etc\\hosts %s", str);
-	system(command);
-	"""
-    return 2
+    print("将会备份到当前目录下，按Enter确认")
+    input()
+    bakdir = r".\hostBAK"
+    if not path.exists(bakdir):   ## Check if the backup path exists
+       mkdir(bakdir)
+    else:
+        pass
+    hosts = "hosts"
+    outpath = r'.\hostBAK'
+    hostpath = r"C:\Windows\System32\drivers\etc"
+    shutil.copyfile(path.join(hostpath, hosts), path.join(outpath,hosts))
+    return 0
 
 
 def trying():
