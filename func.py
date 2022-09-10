@@ -3,6 +3,7 @@ Copyright(C)Radium-bit
 but not include other's code
 """
 import shutil
+from sys import exit
 from os import system, name, path, mkdir
 
 
@@ -40,17 +41,17 @@ def resetNetwork():
 
 def SecurityControl():
     system("secpol.msc")
-    return 0
+    exit(0)
 
 
 def NetworkManager():
     system("ncpa.cpl")
-    return 0
+    exit(0)
 
 
 def Crtmgr():
     system("certmgr.msc")
-    return 0
+    exit(0)
 
 
 ## Firewall Control Part
@@ -58,29 +59,29 @@ def OnFirewall():
     system("netsh advfirewall set allprofiles state on")
     print("Windows防火墙已开启")
     system("pause")
-    return 0
+    exit(0)
 
 
 def OffFirewall():
     system("netsh advfirewall set allprofiles state off")
     system("Windows防火墙已关闭")
     system("pause")
-    return 0
+    exit(0)
 
 
 def AdvancedFW():
     system("control.exe /name Microsoft.WindowsFirewall")
-    return 0
+    exit(0)
 
 
 ## Hosts Modify part
 def OpenHFile():
     system("notepad %systemroot%/system32/drivers/etc/hosts")
-    return 0
+    exit(0)
 
 
 def resetHosts():
-    return 2
+    exit(2)
 
 
 def backupHosts():
@@ -92,10 +93,10 @@ def backupHosts():
     else:
         pass
     hosts = "hosts"
-    outpath = r'.\hostBAK'
+    outpath = r".\hostBAK"
     hostpath = r"C:\Windows\System32\drivers\etc"
-    shutil.copyfile(path.join(hostpath, hosts), path.join(outpath, hosts))
-    return 0
+    shutil.copyfile(path.join(hostpath, hosts), path.join(outpath, hosts))  # Copy file Execute
+    exit(0)
 
 
 def trying():

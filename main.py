@@ -14,5 +14,6 @@ else:
     # Re-run the program with admin rights
     print("\nNot Enough UAC Permisssion, your Group is ")
     func.system("whoami")
+    print(" If you make sure run as Admin, Press Enter.")
     ctypes.windll.shell32.ShellExecuteW(None, "runas", sys.executable, __file__, None, 1)
     input()
